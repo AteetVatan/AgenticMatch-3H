@@ -2,9 +2,10 @@ import faiss
 import numpy as np
 import os
 
+
 class VectorMatchAgent:
-    def __init__(self, index_path: str = "data/partners/partner_index.faiss"): 
-        # use os.cwd 
+    def __init__(self, index_path: str = "data/partners/partner_index.faiss"):
+        # use os.cwd
         index_path = os.path.join(os.getcwd(), index_path)
         if not os.path.exists(index_path):
             raise FileNotFoundError(f"FAISS index file not found: {index_path}")

@@ -37,8 +37,8 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 
-#_partner_metadata = JsonHelper.get_json_data("partner_metadata.json")
-#_id_to_partner = JsonHelper.get_json_data("id_to_partner.json")
+# _partner_metadata = JsonHelper.get_json_data("partner_metadata.json")
+# _id_to_partner = JsonHelper.get_json_data("id_to_partner.json")
 
 
 @app.get("/", tags=["System"])
@@ -46,16 +46,19 @@ async def home():
     """Redirect to upload page."""
     return RedirectResponse(url="/upload")
 
+
 @app.get("/upload", response_class=HTMLResponse)
 async def upload_form(request: Request):
     return templates.TemplateResponse("upload.html", {"request": request})
 
+
 @app.post("/upload")
 @limiter.limit("60/minute")
-async def upload_image(request: Request,image: UploadFile = File(...)): 
+async def upload_image(request: Request, image: UploadFile = File(...)):
     image_pil = await ImageHelper.read_image(image)
     matches = matcher_agent.match(image_pil)
     return JSONResponse(content={"matches": matches})
+
 
 if __name__ == "__main__":
     run_config = MainConfigs.get_run_config()

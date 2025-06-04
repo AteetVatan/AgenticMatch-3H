@@ -3,13 +3,19 @@ from agents.embedding_agent import EmbeddingAgent
 from agents import VectorMatchAgent
 from helpers import JsonHelper
 
+
 class MatcherAgent:
+
     def __init__(self):
         self.embedding_agent = EmbeddingAgent()
         self.vector_match_agent = VectorMatchAgent()
-        partner_metadata_path = os.path.join(os.getcwd(), "data/partners/partner_metadata.json")
-        id_to_partner_path = os.path.join(os.getcwd(), "data/partners/id_to_partner.json")
-        
+        partner_metadata_path = os.path.join(
+            os.getcwd(), "data/partners/partner_metadata.json"
+        )
+        id_to_partner_path = os.path.join(
+            os.getcwd(), "data/partners/id_to_partner.json"
+        )
+
         self.partner_metadata = JsonHelper.get_json_data(partner_metadata_path)
         """
         0 → Tokyo Beauty Lab  
@@ -28,14 +34,16 @@ class MatcherAgent:
         for idx in match_indices:
             partner_id = self.id_to_partner[str(idx)]
             partner_data = self.partner_metadata[partner_id]
-            results.append({
-                "partner_id": partner_id,
-                "name": partner_data["name"],
-                "style": partner_data["style_keywords"],
-                "mood": partner_data["mood"],
-                "category": partner_data["category"],
-                "description": partner_data["description"],
-                "match_reason": f"Matched on style: {', '.join(partner_data['style_keywords'])}, mood: {', '.join(partner_data['mood'])}"
-            })
+            results.append(
+                {
+                    "partner_id": partner_id,
+                    "name": partner_data["name"],
+                    "style": partner_data["style_keywords"],
+                    "mood": partner_data["mood"],
+                    "category": partner_data["category"],
+                    "description": partner_data["description"],
+                    "match_reason": f"Matched on style: {', '.join(partner_data['style_keywords'])}, mood: {', '.join(partner_data['mood'])}",
+                }
+            )
 
         return results

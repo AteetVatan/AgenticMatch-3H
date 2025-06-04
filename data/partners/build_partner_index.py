@@ -5,13 +5,13 @@ import os
 import json
 import torch
 import sys
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from ai_models import CLIPModelLoader
 
 image_dir = os.path.join(os.getcwd(), "data/partners/images")
 index_out_path = os.path.join(os.getcwd(), "data/partners/partner_index.faiss")
 id_map_out_path = os.path.join(os.getcwd(), "data/partners/id_to_partner.json")
-
 
 
 # Load CLIP Model
@@ -44,4 +44,3 @@ faiss.write_index(index, index_out_path)
 
 with open(id_map_out_path, "w") as f:
     json.dump(id_to_partner, f, indent=4)
-
