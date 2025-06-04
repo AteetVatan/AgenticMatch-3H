@@ -26,6 +26,11 @@ class MainConfigs:
                 "port": 8000,
                 "reload": True,
             }
+            
+    @classmethod
+    def is_dev_env(cls):
+        return cls.env == AppEnv.DEV.value
+    
 
     # @classmethod
     # def get_api_key(cls):

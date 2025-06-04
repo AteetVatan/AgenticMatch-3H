@@ -42,7 +42,7 @@ class MatcherAgent:
                     "mood": partner_data["mood"],
                     "category": partner_data["category"],
                     "description": partner_data["description"],
-                    "match_reason": f"Matched on style: {', '.join(partner_data['style_keywords'])}, mood: {', '.join(partner_data['mood'])}",
+                    "match_reason": f"it is matched by: {', '.join(partner_data['style_keywords'])}, mood: {', '.join(partner_data['mood'])}",
                 }
             )
 

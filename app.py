@@ -7,6 +7,7 @@ Vector Match Agent → searches FAISS for similar images.
 Metadata Agent → fetches mood/style data from JSON.
 Returns → matching partners and reasons as JSON response.
 """
+import os
 from fastapi import FastAPI, HTTPException, Header, Request, Depends, File, UploadFile
 from fastapi.responses import JSONResponse, RedirectResponse, HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -24,6 +25,8 @@ from configs import MainConfigs
 
 # Create FastAPI app in main scope
 
+if MainConfigs.is_dev_env():
+    os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 METADATA = JsonHelper.get_json_data("project_metadata.json")
 app = FastAPI(**METADATA["project_metadata"])
@@ -57,7 +60,10 @@ async def upload_form(request: Request):
 async def upload_image(request: Request, image: UploadFile = File(...)):
     image_pil = await ImageHelper.read_image(image)
     matches = matcher_agent.match(image_pil)
-    return JSONResponse(content={"matches": matches})
+    return templates.TemplateResponse("results.html", {
+        "request": request,
+        "matches": matches
+    })
 
 
 if __name__ == "__main__":
