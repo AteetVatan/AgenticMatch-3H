@@ -6,7 +6,7 @@ using CLIP embeddings and FAISS similarity search.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Upload images via web UI or API
 - Extract CLIP-based image embeddings (512-d vectors)
@@ -19,7 +19,7 @@ using CLIP embeddings and FAISS similarity search.
 
 ---
 
-## 🗂 Folder Structure
+## Folder Structure
 
 ```
 AgenticMatch-3H/
@@ -78,13 +78,7 @@ response = requests.post(url, files=files)
 matches = response.json()
 ```
 
-### API Endpoints
 
-- `POST /match` - Upload and match an image
-- `GET /partners` - List all available partners
-- `GET /health` - Check server health
-
-## 🏗️ Architecture
 
 ### Components
 
