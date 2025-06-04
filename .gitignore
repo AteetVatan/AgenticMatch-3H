@@ -1,0 +1,66 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# --- Environment / Virtualenv ---
+.env
+.env.*
+.venv/
+venv/
+ENV/
+env/
+
+# --- OS Files ---
+.DS_Store
+Thumbs.db
+
+# --- Logs & Local Data ---
+*.log
+*.sqlite3
+*.db
+*.pid
+
+# --- Pydantic Cache ---
+*.json.schema
+
+# --- Uvicorn / Gunicorn Reload ---
+*.reload
+
+# --- VS Code / PyCharm / IDEs ---
+.vscode/
+.idea/
+
+# --- FastAPI/Starlette Cache (if using static files, templates, etc.) ---
+staticfiles/
+media/
+build/
+dist/
+
+# --- Migrations (Optional, if using Alembic or Django style) ---
+migrations/
+
+# --- Testing ---
+htmlcov/
+.coverage
+.tox/
+.pytest_cache/
+
+# --- mypy / lint ---
+.mypy_cache/
+.dmypy.json
+.pyre/
+
+# --- Byte-compiled / cache / etc ---
+*.egg-info/
+.eggs/
+.cache/
+
+# --- Deployment ---
+*.tar.gz
+*.whl
+.Python
+pip-log.txt
+pip-delete-this-directory.txt

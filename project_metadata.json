@@ -1,0 +1,16 @@
+{
+    "project_metadata": {
+        "title": "Agentic image-matching AI prototype built in 3 hours.",
+        "description": "",
+        "version": "1.0.0",
+        "contact": {
+            "name": "Ateet Bahmani",
+            "url": "https://ateetai.vercel.app",
+            "email": "ab@masxai.com"
+        },
+        "license_info": {
+            "name": "MIT License",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    }
+}
