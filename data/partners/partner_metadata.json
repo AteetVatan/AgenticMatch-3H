@@ -1,0 +1,67 @@
+{
+    "P001": {
+        "name": "Tokyo Beauty Lab",
+        "style_keywords": [
+            "radiant skin",
+            "natural glow"
+        ],
+        "mood": [
+            "fresh",
+            "youthful"
+        ],
+        "category": "Skincare",
+        "description": "A Japanese skincare studio specializing in brightening treatments and minimalist beauty."
+    },
+    "P002": {
+        "name": "Nordic Face Studio",
+        "style_keywords": [
+            "cool tones",
+            "smooth texture"
+        ],
+        "mood": [
+            "calm",
+            "clean"
+        ],
+        "category": "Aesthetic Clinic",
+        "description": "Scandinavian studio offering facial treatments focused on hydration and clarity."
+    },
+    "P003": {
+        "name": "Mediterraneo Glow",
+        "style_keywords": [
+            "warm glow",
+            "sun-kissed look"
+        ],
+        "mood": [
+            "radiant",
+            "energized"
+        ],
+        "category": "Facial Aesthetics",
+        "description": "Southern European-inspired aesthetic center offering treatments for radiant, beach-inspired skin."
+    },
+    "P004": {
+        "name": "Parisian Porcelaine",
+        "style_keywords": [
+            "porcelain finish",
+            "refined contours"
+        ],
+        "mood": [
+            "elegant",
+            "luxurious"
+        ],
+        "category": "High-End Skincare",
+        "description": "Luxury French clinic known for sculpting and evening skin tone with finesse."
+    },
+    "P005": {
+        "name": "Ayurvedic Radiance",
+        "style_keywords": [
+            "herbal glow",
+            "balanced skin"
+        ],
+        "mood": [
+            "grounded",
+            "rejuvenated"
+        ],
+        "category": "Traditional Indian Wellness",
+        "description": "An Indian studio combining Ayurveda and modern techniques to restore facial balance and natural brightness."
+    }
+}
