@@ -67,5 +67,6 @@ async def upload_image(request: Request, image: UploadFile = File(...)):
 
 
 if __name__ == "__main__":
-    run_config = MainConfigs.get_run_config()
-    uvicorn.run("app:app", **run_config)
+    if MainConfigs.is_dev_env():
+        run_config = MainConfigs.get_run_config()
+        uvicorn.run("app:app", **run_config)
