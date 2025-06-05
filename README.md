@@ -1,3 +1,13 @@
+---
+title: AgenticMatch-3H
+emoji: 🧠
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_file: app.py
+pinned: false
+---
+
 # AgenticMatch-3H
 
 A 3-hour Agentic AI prototype that lets users upload an image and matches it to partner brands based on 

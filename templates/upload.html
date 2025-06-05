@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Upload Image</title>
+    <meta charset="UTF-8">
+    <title>Agentic Image Matcher – By Ateet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Upload an Image to Match Style</h1>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" accept="image/*" required />
-        <button type="submit">Upload</button>
-    </form>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col items-center justify-center px-4">
+
+    <div class="w-full max-w-md bg-white shadow-md rounded-lg p-6">
+        <h1 class="text-2xl font-bold text-center mb-4">Agentic Image Matcher – By Ateet</h1>
+        <p class="text-center text-sm mb-6">
+            <a href="https://ateetai.vercel.app/" target="_blank" class="text-blue-600 hover:underline">
+                Visit my portfolio
+            </a>
+        </p>
+
+        <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data" class="flex flex-col gap-4">
+            <input type="file" name="image" accept="image/jpeg" required
+                class="file:mr-4 file:py-2 file:px-4 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100" />
+
+            <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-4 rounded">
+                Upload JPEG
+            </button>
+        </form>
+
+        <div id="loading" class="mt-4 hidden text-center text-sm text-gray-600">
+            🔄 Matching your image... Please wait.
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const loading = document.getElementById('loading');
+
+        form.addEventListener('submit', function () {
+            loading.classList.remove('hidden');
+        });
+    </script>
 </body>
 
 </html>
